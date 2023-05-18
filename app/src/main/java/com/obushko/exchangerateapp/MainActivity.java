@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -84,5 +86,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void onClick(View view) {
+        Intent intent = new Intent(this, BanksActivity.class);
+        startActivity(intent);
     }
 }

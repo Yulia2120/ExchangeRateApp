@@ -8,6 +8,11 @@ public class ListItemClass {
     String data_5;
     String data_6;
 
+    String urlImage;
+
+    String title;
+
+
     public String getData_1() {
         return data_1;
     }
@@ -54,5 +59,21 @@ public class ListItemClass {
 
     public void setData_6(String data_6) {
         this.data_6 = data_6;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
