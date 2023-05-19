@@ -91,4 +91,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BanksActivity.class);
         startActivity(intent);
     }
+
+    public void onClickChange(View view) {
+        Intent intent = new Intent(this, ChangeActivity.class);
+        startActivity(intent);
+    }
 }
