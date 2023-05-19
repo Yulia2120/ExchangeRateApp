@@ -49,7 +49,6 @@ public class BanksActivity extends AppCompatActivity {
         secondThread = new Thread(runnable);
         secondThread.start();
 
-
     }
 
     private void getWeb() {
@@ -58,27 +57,17 @@ public class BanksActivity extends AppCompatActivity {
             Elements tables = doc.getElementsByTag("tbody");
             Element table = tables.get(2);
 
-            Elements elements_from_table = table.children();
-//            Element dollar = elements_from_table.get(0);
-//            Elements dollar_elements = dollar.children();
+            Elements rows = table.children();
+            for (Element row : rows) {
+                Element imgElement = row.select("img").first();
+                String src = imgElement.absUrl("src");
 
-            Log.d("SecondLog", "Tbody size: " + elements_from_table.get(0).text());
-            //Log.d("SecondLog", "Tbody size: "+tables.get(2).text());
-
-
-           // Elements links = doc.getElementsByTag("src");
-
-            for (int i = 0; i < table.childrenSize(); i++) {
                 ListItemClass items = new ListItemClass();
-
-              //  items.setUrlImage(table.children().get(i).child(0).text());
-                items.setTitle(table.children().get(i).child(0).text());
-                items.setData_1(table.children().get(i).child(1).text());
-                items.setData_2(table.children().get(i).child(2).text());
+                items.setUrlImage(src);
+                items.setTitle(row.child(0).text());
+                items.setData_1(row.child(1).text());
                 banksLists.add(items);
-
             }
-
 
             runOnUiThread(new Runnable() {
                 @Override

@@ -37,15 +37,13 @@ public class BanksListAdapter extends RecyclerView.Adapter<BanksListAdapter.Bank
     public void onBindViewHolder(@NonNull BanksListAdapter.BanksListViewHolder holder, int position) {
         ListItemClass currentItem = banksLists.get(position);
 
-       // String urlImage = currentItem.getUrlImage();
+        String urlImage = currentItem.getUrlImage();
         String title = currentItem.getTitle();
         String data_1 = currentItem.getData_1();
-        String data_2 = currentItem.getData_2();
 
-      //  Picasso.get().load(urlImage).fit().centerInside().into(holder.imageView);
+        Picasso.get().load(urlImage).into(holder.imageView);
         holder.textViewTitle.setText(title);
         holder.textView1.setText(data_1);
-        holder.textView2.setText(data_2);
 
 
     }
@@ -57,18 +55,18 @@ public class BanksListAdapter extends RecyclerView.Adapter<BanksListAdapter.Bank
 
     public static class BanksListViewHolder extends RecyclerView.ViewHolder{
 
-       // ImageView imageView;
+        ImageView imageView;
         TextView textViewTitle;
         TextView textView1;
-        TextView textView2;
+       // TextView textView2;
 
 
         public BanksListViewHolder(@NonNull View itemView) {
             super(itemView);
-           // imageView = itemView.findViewById(R.id.imageViewBanks);
+            imageView = itemView.findViewById(R.id.imageViewBanks);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textView1 = itemView.findViewById(R.id.textView1);
-            textView2 = itemView.findViewById(R.id.textView2);
+
 
         }
     }
